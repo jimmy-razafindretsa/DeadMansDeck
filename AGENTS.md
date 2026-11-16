@@ -4,6 +4,10 @@ The rules for any coding agent working in this repository. They are mandatory.
 
 ## 1. Project Overview
 
+**Design source of truth:** the French GDD v1.0. Read [`Docs/GDD.md`](Docs/GDD.md), the text version. Don't parse [`DeadMansDeck_GDD_FR.pdf`](DeadMansDeck_GDD_FR.pdf), which is the original with figures. Check the GDD before designing any gameplay system, enemy, weapon, HUD element, or control binding. Follow its **Vital / Désiré** priorities and milestone schedule (M1–M5, ending early December 2026). If a request conflicts with the GDD, flag the conflict to the user.
+
+**Game summary:** a first-person arcade boarding-defense wave shooter. The player is the Revenant Captain defending the galleon deck: cannons sink skeleton rafts, and sabre plus flintlock clear boarders. Destructible Chaos railings act as barricades. The player loses if their HP or the hull integrity reaches 0.
+
 | Item | Value |
 |---|---|
 | Engine | Unreal Engine **5.8** (`EngineAssociation` in `DeadMansDeck.uproject`) |
@@ -22,6 +26,8 @@ The rules for any coding agent working in this repository. They are mandatory.
 ## 2. Directory Map & Boundaries
 
 ```text
+DeadMansDeck_GDD_FR.pdf     Original GDD (binary; use Docs/GDD.md instead)
+Docs/GDD.md                 GDD text version (read this for design questions)
 Config/                     Engine/Game/Input/Editor .ini (text, safe to read and edit)
 Content/
 ├── Characters/Mannequins/  Template anims (Pistol/Rifle/Unarmed/Death), meshes, rigs, mats
