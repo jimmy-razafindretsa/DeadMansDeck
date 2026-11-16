@@ -70,6 +70,15 @@ Use PascalCase after the prefix (`BP_CardDeck`, `WBP_HealthBar`). Do not use spa
   3. **Manual instructions** for the user when no editor bridge is available.
 - Save every modified asset explicitly. Never leave dirty packages.
 
+### Starting the MCP server
+- If the `unreal-mcp` server is unreachable (`ECONNREFUSED` on `http://127.0.0.1:8000/mcp`), start it yourself. Do not ask the user to do it.
+  - **Editor not running:** launch it with the server command, then poll the endpoint until it answers:
+    ```bash
+    "/c/Program Files/Epic Games/UE_5.8/Engine/Binaries/Win64/UnrealEditor.exe" "<repo>/DeadMansDeck.uproject" -ExecCmds="ModelContextProtocol.StartServer"
+    ```
+  - **Editor running but the server is stopped:** the console command is `ModelContextProtocol.StartServer` (optionally followed by a port). Enter it in the editor's Cmd box, using the `SlateInspectorToolset` if any bridge is up; otherwise relaunch as above.
+- Keep the editor language set to **English**. The MCP graph DSL resolves node IDs by their English names (`Utilities|Operators|Multiply`, `Utilities|FlowControl|Branch`), so a localized editor breaks graph writing. After a language change, restart the editor so the node database is rebuilt.
+
 ```python
 import unreal
 
