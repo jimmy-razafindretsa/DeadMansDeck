@@ -98,6 +98,7 @@ Keep each graph as a separate fenced block per function or event.
 
 ### Atomic commits
 - Each commit is **one** logical, self-contained change: one feature, one fix, or one config update. Never bundle unrelated changes.
+- **Commit small and often.** Prefer several small commits over one large one. Split a task into one commit per asset or step (for example, the character, then the GameMode, then the materials, then the level), each with its own message.
 - Use imperative Conventional Commit messages:
 
 ```text
